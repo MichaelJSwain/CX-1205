@@ -2,14 +2,33 @@ const CX1205 = {
     addCss: function() {
         const css = document.createElement('style');
         css.innerHTML = `
+            [class*="content_shopping_bag_usp"] {
+                margin-bottom: 32px;
+            }
+            .CX1205-payment-method-container {
+                margin: 24px 0 48px 0;
+            }
+              .CX1205-payment-method-container p {
+                margin: 0;
+                font-family: Gill Sans;
+                margin-bottom: 12px;
+            }
             .CX1205-payment-method-list {
                 display: flex;
                 list-style: none;
                 padding-left: 0;
                 gap: 12px;
             }
-                .CX1205-payment-method-list li {
-                width: 30px;
+            .CX1205-payment-method-list ul {
+                margin: 0;
+            }
+            .CX1205-payment-method-list li {
+                width: 2rem;
+                height: 2rem;
+            }
+            .CX1205-payment-method-list img {
+                width: 100%;
+                height: 100%;
             }
         `;
         document.head.appendChild(css);
@@ -44,6 +63,7 @@ const CX1205 = {
             paymentLogos: ['blik','klarna','mc','paypal','onlineBanking_PL','visa']
         }
     }[window.__NEXT_DATA__.props.pageProps.initialState.currentStore.target],
+    targetSelector: '[class*="content_shopping_bag_usp"]',
     createPaymentMethodsElement: function() {
         let paymentMethodLogos = '';
 
@@ -64,7 +84,7 @@ const CX1205 = {
         return paymentMethodsElement;
     },
     insertPaymentMethodsElement: function(paymentMethodsElement) {
-        const placementTarget = document.querySelector('[class*="content_shopping_bag_usp"]');
+        const placementTarget = document.querySelector(CX1205.targetSelector);
         placementTarget.parentElement.insertBefore(paymentMethodsElement, placementTarget.nextElementSibling);
     },
     init: function() {
