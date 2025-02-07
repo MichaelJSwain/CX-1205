@@ -10,8 +10,11 @@ const CX1205 = {
             }
               .CX1205-title {
                 margin: 0;
-                font-family: Gill Sans;
+                font-family: Klein Web;
                 margin-bottom: 12px;
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 0.25px;
             }
             .CX1205-payment-method-list {
                 display: flex;

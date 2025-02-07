@@ -2,14 +2,31 @@ const CX1205 = {
     addCss: function() {
         const css = document.createElement('style');
         css.innerHTML = `
+              .CX1205-payment-method-container {
+                margin: 24px 0 48px 0;
+            }
+             .CX1205-title {
+                margin: 0;
+                font-family: Klein Web;
+                margin-bottom: 12px;
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 0.25px;
+            }
             .CX1205-payment-method-list {
                 display: flex;
                 list-style: none;
                 padding-left: 0;
                 gap: 12px;
+                margin: 0;
             }
-                .CX1205-payment-method-list li {
-                width: 30px;
+            .CX1205-payment-method-list-item {
+                width: 2rem;
+                height: 2rem;
+            }
+            .CX1205-payment-method-logo {
+                width: 100%;
+                height: 100%;
             }
         `;
         document.head.appendChild(css);
@@ -44,6 +61,7 @@ const CX1205 = {
             paymentLogos: ['blik','klarna','mc','paypal','onlineBanking_PL','visa']
         }
     }[window.__NEXT_DATA__.props.pageProps.initialState.currentStore.target],
+    targetSelector: '[data-testid="ProductAccordions-component"]',
     createPaymentMethodsElement: function() {
         let paymentMethodLogos = '';
 
@@ -64,7 +82,7 @@ const CX1205 = {
         return paymentMethodsElement;
     },
     insertPaymentMethodsElement: function(paymentMethodsElement) {
-        const placementTarget = document.querySelector('[data-testid="ProductAccordions-component"]');
+        const placementTarget = document.querySelector(CX1205.targetSelector);
         placementTarget.parentElement.insertBefore(paymentMethodsElement, placementTarget.nextElementSibling);
     },
     init: function() {
