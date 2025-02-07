@@ -48,15 +48,15 @@ const CX1205 = {
         let paymentMethodLogos = '';
 
         CX1205.localisedPaymentMethods.paymentLogos.forEach(function(logo) {
-            paymentMethodLogos += `<li>
-                                    <img src="https://checkoutshopper-live.adyen.com/checkoutshopper/images/logos/${logo}.svg" alt="${logo}">
+            paymentMethodLogos += `<li class="CX1205-payment-method-list-item">
+                                    <img class="CX1205-payment-method-logo" src="https://checkoutshopper-live.adyen.com/checkoutshopper/images/logos/${logo}.svg" alt="${logo}">
                                 </li>`;
         })
 
         const paymentMethodsElement = document.createElement('div');
         paymentMethodsElement.setAttribute('class', 'CX1205-payment-method-container');
         paymentMethodsElement.innerHTML = `
-        <p>${ CX1205.localisedPaymentMethods.title}</p>
+        <p class="CX1205-title">${ CX1205.localisedPaymentMethods.title}</p>
         <ul class="CX1205-payment-method-list">
             ${paymentMethodLogos}
         </ul>

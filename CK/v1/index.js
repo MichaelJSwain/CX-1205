@@ -8,7 +8,7 @@ const CX1205 = {
             .CX1205-payment-method-container {
                 margin: 24px 0 48px 0;
             }
-              .CX1205-payment-method-container p {
+              .CX1205-title {
                 margin: 0;
                 font-family: Gill Sans;
                 margin-bottom: 12px;
@@ -18,15 +18,13 @@ const CX1205 = {
                 list-style: none;
                 padding-left: 0;
                 gap: 12px;
-            }
-            .CX1205-payment-method-list ul {
                 margin: 0;
             }
-            .CX1205-payment-method-list li {
+            .CX1205-payment-method-list-item {
                 width: 2rem;
                 height: 2rem;
             }
-            .CX1205-payment-method-list img {
+            .CX1205-payment-method-logo {
                 width: 100%;
                 height: 100%;
             }
@@ -68,15 +66,15 @@ const CX1205 = {
         let paymentMethodLogos = '';
 
         CX1205.localisedPaymentMethods.paymentLogos.forEach(function(logo) {
-            paymentMethodLogos += `<li>
-                                    <img src="https://checkoutshopper-live.adyen.com/checkoutshopper/images/logos/${logo}.svg" alt="${logo}">
+            paymentMethodLogos += `<li class="CX1205-payment-method-list-item">
+                                    <img class="CX1205-payment-method-logo" src="https://checkoutshopper-live.adyen.com/checkoutshopper/images/logos/${logo}.svg" alt="${logo}">
                                 </li>`;
         })
 
         const paymentMethodsElement = document.createElement('div');
         paymentMethodsElement.setAttribute('class', 'CX1205-payment-method-container');
         paymentMethodsElement.innerHTML = `
-        <p>${ CX1205.localisedPaymentMethods.title}</p>
+        <p class="CX1205-title">${ CX1205.localisedPaymentMethods.title}</p>
         <ul class="CX1205-payment-method-list">
             ${paymentMethodLogos}
         </ul>
