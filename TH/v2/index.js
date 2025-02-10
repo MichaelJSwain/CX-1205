@@ -80,6 +80,9 @@ const CX1205 = {
             ${paymentMethodLogos}
         </ul>
         `;
+        paymentMethodsElement.querySelector(".CX1205-payment-method-list").addEventListener("click", function() {
+            optimizely.sendAnalyticsEvents("CX-1205 Clicks on Payment method", true);
+        });
         return paymentMethodsElement;
     },
     insertPaymentMethodsElement: function(paymentMethodsElement) {
