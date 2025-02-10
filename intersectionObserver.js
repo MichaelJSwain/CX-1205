@@ -21,8 +21,8 @@ const productDetails = {
     }
 }
 
-const callback = (entries, observer) => {
-    entries.forEach((entry) => {
+const callback = function(entries, observer) {
+    entries.forEach(function(entry) {
         if (entry.isIntersecting) {
             usps.disconnect();
             productDetails.disconnect();
