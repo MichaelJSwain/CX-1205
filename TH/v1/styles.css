@@ -1,0 +1,30 @@
+[class*="content_shopping_bag_usp_pdpUsp"] {
+    margin-bottom: 32px;
+}
+.CX1205-payment-method-container {
+    margin: 24px 0 48px 0;
+}
+  .CX1205-title {
+    margin: 0;
+    font-family: Gill Sans;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 21px;
+}
+.CX1205-payment-method-list {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    gap: 12px;
+}
+.CX1205-payment-method-list {
+    margin: 0;
+}
+.CX1205-payment-method-list-item {
+    width: 2rem;
+    height: 2rem;
+}
+.CX1205-payment-method-logo {
+    width: 100%;
+    height: 100%;
+}
